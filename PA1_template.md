@@ -16,7 +16,7 @@ master.data <- na.omit(master.data.all)
 ## Histogram of total number of steps taken each day
 
 ```r
-hist(master.data$steps,col="green")
+hist(master.data$steps,col="green",main="Total Number of steps taken each day")
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
@@ -35,7 +35,7 @@ library(plyr)
 
 ```r
 mean.steps <- ddply(master.data, .(date), summarize, mean_value=mean(steps))
-hist(mean.steps$mean_value,col="green")
+hist(mean.steps$mean_value,col="green",main="Mean Total steps taken per day")
 abline(v=median(mean.steps$mean_value),col="magenta",lwd=2)
 ```
 
